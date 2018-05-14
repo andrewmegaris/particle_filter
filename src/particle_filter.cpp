@@ -176,7 +176,8 @@ void ParticleFilter::resample() {
     vector<Particle> resampled_particles;
     vector<double> weights;
 
-    for(int i=0; i<num_particles;i++){
+    for(int i=0; i<num_particles;i++)
+    {
         weights.push_back(particles[i].weight);
     }
 
@@ -216,8 +217,8 @@ Particle ParticleFilter::SetAssociations(Particle& particle, const std::vector<i
 
 string ParticleFilter::getAssociations(Particle best)
 {
-	vector<int> v = best.associations;
-	stringstream ss;
+    vector<int> v = best.associations;
+    stringstream ss;
     copy( v.begin(), v.end(), ostream_iterator<int>(ss, " "));
     string s = ss.str();
     s = s.substr(0, s.length()-1);  // get rid of the trailing space
@@ -225,8 +226,8 @@ string ParticleFilter::getAssociations(Particle best)
 }
 string ParticleFilter::getSenseX(Particle best)
 {
-	vector<double> v = best.sense_x;
-	stringstream ss;
+    vector<double> v = best.sense_x;
+    stringstream ss;
     copy( v.begin(), v.end(), ostream_iterator<float>(ss, " "));
     string s = ss.str();
     s = s.substr(0, s.length()-1);  // get rid of the trailing space
@@ -234,8 +235,8 @@ string ParticleFilter::getSenseX(Particle best)
 }
 string ParticleFilter::getSenseY(Particle best)
 {
-	vector<double> v = best.sense_y;
-	stringstream ss;
+    vector<double> v = best.sense_y;
+    stringstream ss;
     copy( v.begin(), v.end(), ostream_iterator<float>(ss, " "));
     string s = ss.str();
     s = s.substr(0, s.length()-1);  // get rid of the trailing space
